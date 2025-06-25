@@ -53,7 +53,7 @@
 ---
 
 ## 📁 Project Structure
-
+```bash
 Karigar/
 │
 ├── index.html               # Homepage
@@ -71,7 +71,7 @@ Karigar/
 │
 ├── images/                  # Static images
 └── style/                   # CSS styles
-
+```
 
 
 ---
