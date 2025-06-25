@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Karigar</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body class="with-sidebar">
+  <section id="hero" class="hero">
+    <header>
+      <h1>Karigar</h1>
+      <nav>
+        <a class="active" href="index.html">Home</a>
+        <a href="material.html">Materials</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="#" id="openModalBtn">Login</a>
+      </nav>
+    </header>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h2>Real People. Real Skills. Real Solutions.</h2>
+      <p>Skip the middleman. Karigar links you with real freelancers offering home services
+         at better prices - and lets you find materials without wasting hours at the market. Home fixes made smarter.</p>
+
+      <div class="cta-buttons">
+        <a href="services.html" class="cta-btn book-service">Book a Service</a>
+        <a href="material.html" class="cta-btn buy-material">Buy Material</a>
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <section class="categories" id="services">
+    <h2>Service Categories</h2>
+    <div class="box">
+      <div class="item">Plumbing</div>
+      <div class="item">Electricians</div>
+      <div class="item">Cleaning</div>
+      <div class="item">Carpentry</div>
+      <div class="item">More</div>
+    </div>
+  </section>
+
+  <section class="material-categories" id="materials">
+    <h2>Material Categories</h2>
+    <div class="box">
+      <div class="item">
+        <img src="images/material1-icon.png" alt="Wood">
+        <p>Wood</p>
+      </div>
+      <div class="item">
+        <img src="images/material2-icon.png" alt="Metal">
+        <p>Metal</p>
+      </div>
+      <div class="item">
+        <img src="images/material3-icon.png" alt="Concrete">
+        <p>Concrete</p>
+      </div>
+      <div class="item">
+        <img src="images/material4-icon.png" alt="Glass">
+        <p>Glass</p>
+      </div>
+      <div class="item">
+        <img src="images/material5-icon.png" alt="Plastic">
+        <p>Plastic</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <img src="images/icon-5359553_640.webp" alt="Ali R." class="testimonial-img">
+        <blockquote>
+          "Super quick service, booked a plumber in minutes!"
+          <cite>- Ali R.</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/icon-5359553_640.webp" alt="Sana K." class="testimonial-img">
+        <blockquote>
+          "I loved how easy it was to find a reliable electrician."
+          <cite>- Sana K.</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/icon-5359553_640.webp" alt="Ahmed P." class="testimonial-img">
+        <blockquote>
+          "Karigar is my go-to for any home repair services now."
+          <cite>- Ahmed P.</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-section">
+      <h3>Karigar</h3>
+      <p>Affordable and trusted home services across Pakistan.</p>
+      <ul class="contact-info">
+        <li>+123-456-7890</li>
+        <li>Karigar123@mail.com</li>
+        <li>Islamabad, Pakistan</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Appointment</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Policies</h4>
+      <ul>
+        <li>Privacy Policy</li>
+        <li>Terms & Conditions</li>
+        <li>Support</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Subscribe</h4>
+      <form action="#" method="POST" class="newsletter-form">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+      <span class="close-btn" id="closeModalBtn">x</span>
+  
+      <div class="modal-left">
+        <div id="loginForm">
+          <form action="php/login.php" method="POST" onsubmit="return validateLoginForm()">
+            <h2>Login</h2>
+
+            <div class="input-group">
+              <input type="text" id="loginEmail" name="email_or_username" placeholder="Username or email" required>
+              <span class="error-message" id="loginEmailError"></span>
+            </div>
+
+            <div class="input-group">
+              <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+              <i class="fa fa-eye eye-icon"></i>
+              <span class="error-message" id="loginPasswordError"></span>
+            </div>
+
+            <div class="options">
+              <label><input type="checkbox" id="rememberMe" name="rememberMe"> Remember Me</label>
+              <a href="#" id="showForgot">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-button">LOGIN</button>
+
+            <div class="social-login">
+              <div class="social-buttons">
+                <button type="button" class="google">LOGIN WITH GOOGLE</button>
+              </div>
+            </div>
+
+            <p class="center-text">
+              Don't have an account? <a href="#" id="showRegister" class="login-link">Register here</a>
+            </p>
+          </form>
+        </div>
+
+  
+        <div id="registerForm" style="display: none;">
+          <h2>Create Your Account</h2>
+           <form id="registrationForm" method="POST" action="php/register.php">
+            <div class="input-group">
+              <input type="text" name="name" placeholder="Full Name" required id="regName">
+              <span class="error-message" id="regNameError"></span>
+            </div>
+            <div class="input-group">
+              <input type="email" name="email" placeholder="Email Address" required id="regEmail">
+              <span class="error-message" id="regEmailError"></span>
+            </div>
+            <div class="input-group">
+              <input type="password" name="password" placeholder="Password" required id="regPassword">
+              <span class="error-message" id="regPasswordError"></span>
+              <div class="password-strength">
+                <div class="strength-meter">
+                  <div class="strength-bar"></div>
+                </div>
+                <div class="strength-text">Password Strength: <span>Weak</span></div>
+              </div>
+            </div>
+  
+            <div class="select-menu" id="roleMenu">
+              <div class="select-btn">
+                <span class="sBtn-text">Select Account Type</span>
+                <i class="bx bx-chevron-down"></i>
+              </div>
+              <ul class="options">
+                <li class="option" data-value="customer">
+                  <i class="bx bx-user" style="color: #333;"></i>
+                  <span class="option-text">Customer</span>
+                </li>
+                <li class="option" data-value="provider">
+                  <i class="bx bx-wrench" style="color: #f39c12;"></i>
+                  <span class="option-text">Service Provider</span>
+                </li>
+                <li class="option" data-value="supplier">
+                  <i class="bx bx-package" style="color: #3498db;"></i>
+                  <span class="option-text">Material Supplier</span>
+                </li>
+              </ul>
+            </div>
+  
+            <input type="hidden" name="role" id="roleInput" required>
+  
+             <div class="role-options-container">
+            <div id="providerOptions" style="display: none;">
+              <label>Select Services You Provide:</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="services[]" value="plumber"> Plumber</label><br>
+                <label><input type="checkbox" name="services[]" value="day_labour"> Day Labour</label><br>
+                <label><input type="checkbox" name="services[]" value="electrician"> Electrician</label><br>
+                <label><input type="checkbox" name="services[]" value="carpenter"> Carpenter</label><br>
+                <label><input type="checkbox" name="services[]" value="masor"> Mason</label><br>
+                <label><input type="checkbox" name="services[]" value="gardener"> Gardener</label><br>
+                <label><input type="checkbox" name="services[]" value="cleaning_services"> Cleaning Services</label>
+              </div>
+              <span id="providerOptionsError" class="error-message"></span>
+            </div>
+  
+            <div id="supplierOptions" style="display: none;">
+              <label>Select Materials You Supply:</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="materials[]" value="sanitary_fittings"> Sanitary Fittings</label><br>
+                <label><input type="checkbox" name="materials[]" value="electrical_fittings"> Electrical Fittings</label><br>
+                <label><input type="checkbox" name="materials[]" value="gardening_materials"> Gardening Materials</label><br>
+                <label><input type="checkbox" name="materials[]" value="carpentering_materials"> Carpentering Materials</label><br>
+                <label><input type="checkbox" name="materials[]" value="construction_materials"> Construction Materials</label><br>
+                <label><input type="checkbox" name="materials[]" value="tools"> Tools</label>
+              </div>
+               <span id="supplierOptionsError" class="error-message"></span>
+            </div>
+            <span id="roleInputError" class="error-message"></span>
+          </div>
+  
+            <button type="submit" class="login-button">Register</button>
+            <p class="center-text">
+              Already have an account? <a href="#" id="backToLogin" class="login-link">Login here</a>
+            </p>
+          </form>
+        </div>
+  
+        <div id="forgotForm" style="display: none;">
+          <h2>Forgot Password</h2>
+          <form action="php/reset_password.php" method="POST">
+            <div class="input-group">
+              <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="login-button">Send Reset Link</button>
+            <p style="margin-top: 10px;">Remembered? <a href="#" id="backToLoginFromForgot" class="login-link">Go back</a></p>
+          </form>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#hero" class="sidebar-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#services" class="sidebar-link"><i class="fas fa-tools"></i><span>Services</span></a></li>
+        <li><a href="#materials" class="sidebar-link"><i class="fas fa-box-open"></i><span>Materials</span></a></li>
+        <li><a href="#testimonials" class="sidebar-link"><i class="fas fa-quote-left"></i><span>Testimonials</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
